@@ -9,10 +9,19 @@ import SwiftUI
 
 struct StationHomeView: View {
     
-    @StateObject var vM = NetworkUserService()
+    @StateObject private var vm = StationHomeViewModel()
     
     var body: some View {
-        Text(vM.user?.name ?? "")
+        
+        if let user = vm.user {
+            VStack {
+                Text(user.name)
+                Text(user.url)
+                Text("\(user.station_code)")
+            }
+        } else {
+            ProgressView()
+        }
     }
 }
 
