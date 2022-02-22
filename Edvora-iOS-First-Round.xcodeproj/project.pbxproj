@@ -8,17 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		95C4538627C51787005441DD /* Edvora_iOS_First_RoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4538527C51787005441DD /* Edvora_iOS_First_RoundApp.swift */; };
-		95C4538827C51787005441DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4538727C51787005441DD /* ContentView.swift */; };
 		95C4538A27C51788005441DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C4538927C51788005441DD /* Assets.xcassets */; };
 		95C4538D27C51788005441DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C4538C27C51788005441DD /* Preview Assets.xcassets */; };
+		95C4539427C51866005441DD /* Inter-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95C4539327C51866005441DD /* Inter-Variable.ttf */; };
+		95C4539C27C51B14005441DD /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4539B27C51B14005441DD /* FontExtension.swift */; };
+		95C453A327C51DC9005441DD /* StationHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C453A227C51DC9005441DD /* StationHomeView.swift */; };
+		95C453A527C51DE4005441DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C453A427C51DE4005441DD /* User.swift */; };
+		95C453A727C51E06005441DD /* NetworkUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C453A627C51E06005441DD /* NetworkUserService.swift */; };
+		95C453AD27C552EE005441DD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C453AC27C552EE005441DD /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		95C4538227C51787005441DD /* Edvora-iOS-First-Round.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Edvora-iOS-First-Round.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C4538527C51787005441DD /* Edvora_iOS_First_RoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edvora_iOS_First_RoundApp.swift; sourceTree = "<group>"; };
-		95C4538727C51787005441DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95C4538927C51788005441DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95C4538C27C51788005441DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95C4539327C51866005441DD /* Inter-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Variable.ttf"; sourceTree = "<group>"; };
+		95C4539727C51939005441DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		95C4539B27C51B14005441DD /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		95C453A227C51DC9005441DD /* StationHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationHomeView.swift; sourceTree = "<group>"; };
+		95C453A427C51DE4005441DD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		95C453A627C51E06005441DD /* NetworkUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUserService.swift; sourceTree = "<group>"; };
+		95C453AC27C552EE005441DD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +62,12 @@
 		95C4538427C51787005441DD /* Edvora-iOS-First-Round */ = {
 			isa = PBXGroup;
 			children = (
-				95C4538527C51787005441DD /* Edvora_iOS_First_RoundApp.swift */,
-				95C4538727C51787005441DD /* ContentView.swift */,
+				95C4539827C51AEC005441DD /* Extensions */,
+				95C4539527C5186F005441DD /* Resources */,
+				95C453A127C51D8F005441DD /* Core */,
 				95C4538927C51788005441DD /* Assets.xcassets */,
+				95C4539727C51939005441DD /* Info.plist */,
+				95C4538527C51787005441DD /* Edvora_iOS_First_RoundApp.swift */,
 				95C4538B27C51788005441DD /* Preview Content */,
 			);
 			path = "Edvora-iOS-First-Round";
@@ -65,6 +79,81 @@
 				95C4538C27C51788005441DD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95C4539527C5186F005441DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95C4539627C51879005441DD /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		95C4539627C51879005441DD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				95C4539327C51866005441DD /* Inter-Variable.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		95C4539827C51AEC005441DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95C4539B27C51B14005441DD /* FontExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95C4539D27C51D5F005441DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95C453A227C51DC9005441DD /* StationHomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		95C4539E27C51D66005441DD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95C4539F27C51D6C005441DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95C453A427C51DE4005441DD /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95C453A027C51D72005441DD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				95C453A627C51E06005441DD /* NetworkUserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		95C453A127C51D8F005441DD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				95C453AB27C552E2005441DD /* Utilities */,
+				95C453A027C51D72005441DD /* Services */,
+				95C4539F27C51D6C005441DD /* Models */,
+				95C4539E27C51D66005441DD /* ViewModels */,
+				95C4539D27C51D5F005441DD /* Views */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		95C453AB27C552E2005441DD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				95C453AC27C552EE005441DD /* NetworkManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95C4538D27C51788005441DD /* Preview Assets.xcassets in Resources */,
+				95C4539427C51866005441DD /* Inter-Variable.ttf in Resources */,
 				95C4538A27C51788005441DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95C4538827C51787005441DD /* ContentView.swift in Sources */,
+				95C453AD27C552EE005441DD /* NetworkManager.swift in Sources */,
+				95C453A527C51DE4005441DD /* User.swift in Sources */,
+				95C453A727C51E06005441DD /* NetworkUserService.swift in Sources */,
+				95C4539C27C51B14005441DD /* FontExtension.swift in Sources */,
+				95C453A327C51DC9005441DD /* StationHomeView.swift in Sources */,
 				95C4538627C51787005441DD /* Edvora_iOS_First_RoundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +366,7 @@
 				DEVELOPMENT_TEAM = 8HB4M5YG35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Edvora-iOS-First-Round/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +396,7 @@
 				DEVELOPMENT_TEAM = 8HB4M5YG35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Edvora-iOS-First-Round/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
