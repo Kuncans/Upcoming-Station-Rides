@@ -9,8 +9,8 @@ import SwiftUI
 
 struct FilterTabView: View {
     
-    @Binding var selectedTab : Tabs
-    @State var showFilterPopup = false
+    @Binding var selectedTab: Tabs
+    @Binding var showingFilterModal: Bool
     
     var body: some View {
         
@@ -22,11 +22,13 @@ struct FilterTabView: View {
             }
             Spacer()
             Button {
-                showFilterPopup = true
+                showingFilterModal.toggle()
             } label: {
                 HStack (spacing: 5) {
                     Image("Sort")
                         .resizable()
+                        .renderingMode(.template)
+                        .foregroundColor(Color.theme.accent)
                         .frame(width: 14, height: 14)
                     Text("Filters")
                         .font(.interRegular)
@@ -40,6 +42,6 @@ struct FilterTabView: View {
 
 struct FilterTabView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterTabView(selectedTab: .constant(.nearest))
+        FilterTabView(selectedTab: .constant(.nearest), showingFilterModal: .constant(false))
     }
 }

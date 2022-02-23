@@ -13,6 +13,7 @@ final class StationHomeViewModel: ObservableObject {
     @Published var user: User?
     @Published var allRides: [Ride] = []
     @Published var selectedTab: Tabs = .nearest
+    @Published var showingFilterModal: Bool = false
     
     private let userDataService = UserDataService()
     private let rideDataService = RideDataService()

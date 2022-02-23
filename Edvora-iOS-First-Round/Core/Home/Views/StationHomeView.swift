@@ -15,31 +15,33 @@ struct StationHomeView: View {
         
         if let user = vm.user {
             
-            UserProfileTitleView(user: user)
-                        
-            FilterTabView(selectedTab: $vm.selectedTab)
-            
-            Spacer()
-            
-            switch vm.selectedTab {
-            case .nearest:
-                Text("NEAREST")
-            case .upcoming:
-                Text("UPCOMING")
-            case .past:
-                Text("PAST")
+            VStack {
+                UserProfileTitleView(user: user)
+                            
+                FilterTabView(selectedTab: $vm.selectedTab, showingFilterModal: $vm.showingFilterModal)
+                
+                if vm.showingFilterModal {
+                    Text("show modal")
+                } else {
+                    Text("close modal")
+                }
+                
+                Spacer()
+                
+                switch vm.selectedTab {
+                case .nearest:
+                    Text("NEAREST")
+                case .upcoming:
+                    Text("UPCOMING")
+                case .past:
+                    Text("PAST")
+                }
+                Spacer()
             }
-            Spacer()
-//                ScrollView{
-//                    ForEach(vm.allRides) { ride in
-//                        Text("\(ride.id) + \(ride.state)")
-//                            .frame(maxWidth: .infinity)
-//                    }
-//                }
-            }
-         else {
-            ProgressView()
         }
+        else {
+           ProgressView()
+       }
     }
 }
 

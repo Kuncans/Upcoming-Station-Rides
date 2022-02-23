@@ -16,5 +16,25 @@ struct Ride: Codable, Identifiable {
     let map_url: String
     let state: String
     let city: String
+//    var formattedDate: Date {
+//        getFormattedDate(date: date)
+//    }
+//    
+//    func getFormattedDate(date: String) -> Date {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/DD/YYYY HH:MM"
+//    }
+    
+}
+
+struct MockRide {
+    
+    static let devRide = Ride(id: 210,
+                              origin_station_code: 5,
+                              station_path: [55, 64, 71, 83],
+                              date: "12/19/2021 04:58 AM",
+                              map_url: "https://picsum.photos/200",
+                              state: "Goa",
+                              city: "Marmagao")
     
 }
