@@ -42,3 +42,13 @@ final class StationHomeViewModel: ObservableObject {
         self.selectedRide = nil
     }
 }
+
+//
+//                switch vm.selectedTab {
+//                case .nearest:
+//                    Text("NEAREST")
+//                case .upcoming:
+//                    Text("UPCOMING")
+//                case .past:
+//                    Text("PAST")
+//                }

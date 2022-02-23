@@ -11,32 +11,57 @@ struct StationHomeView: View {
     
     @StateObject private var vm = StationHomeViewModel()
     @State private var detailViewPresented = false
+    @State var viewState = CGSize(width: 0, height: 800)
     
     var body: some View {
         
         if let user = vm.user {
             
-            VStack {
-                UserProfileTitleView(user: user)
-                            
-                FilterTabView(selectedTab: $vm.selectedTab, showingFilterModal: $vm.showingFilterModal)
-                
-                ridesList
-                
-//
-//                switch vm.selectedTab {
-//                case .nearest:
-//                    Text("NEAREST")
-//                case .upcoming:
-//                    Text("UPCOMING")
-//                case .past:
-//                    Text("PAST")
-//                }
-            }
-            .sheet(isPresented: $detailViewPresented, onDismiss: vm.dismissSelectedRide) {
-                if let ride = vm.selectedRide {
-                    StationInfoView(ride: ride)
+            ZStack {
+                VStack {
+                    UserProfileTitleView(user: user)
+                                
+                    FilterTabView(selectedTab: $vm.selectedTab, showingFilterModal: $vm.showingFilterModal)
+                        .disabled(detailViewPresented ? true : false)
+                    
+                    ridesList
+                        .blur(radius: detailViewPresented ? 10 : 0)
+                        .animation(.easeInOut(duration: 0.3), value: detailViewPresented)
+
                 }
+                .animation(.spring(), value: viewState)
+                .onTapGesture {
+                    self.viewState = CGSize(width: 0, height: 800)
+                    detailViewPresented = false
+                }
+                
+                    VStack {
+                        Spacer()
+                        
+                        StationDetailView(ride: vm.selectedRide ?? MockRide.devRide)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .offset(y: viewState.height + 200)
+                            .animation(.easeInOut, value: viewState)
+                            .onTapGesture {
+                                self.viewState = CGSize(width: 0, height: 800)
+                                detailViewPresented = false
+                            }
+                            .gesture(
+                                DragGesture()
+                                    .onChanged({ value in
+                                        self.viewState = value.translation
+                                    })
+                                    .onEnded({ value in
+                                        if self.viewState.height > 200 {
+                                            self.viewState = CGSize(width: 0, height: 800)
+                                            detailViewPresented = false
+                                        } else {
+                                            self.viewState = .zero
+                                        }
+                                    })
+                            )
+                    }.edgesIgnoringSafeArea(.all)
+                    
             }
         }
         else {
@@ -61,10 +86,13 @@ extension StationHomeView {
                     .onTapGesture {
                         detailViewPresented = true
                         vm.selectedRide = ride
+                        self.viewState = .zero
                     }
+                
             }
             .padding(.horizontal)
         }
+        .disabled(detailViewPresented ? true : false)
         .padding(.top, 28)
     }
 }
