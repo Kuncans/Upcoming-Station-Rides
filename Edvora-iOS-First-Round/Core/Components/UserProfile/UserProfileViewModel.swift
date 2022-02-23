@@ -8,14 +8,11 @@
 import Foundation
 import Combine
 
-final class StationHomeViewModel: ObservableObject {
+final class UserProfileViewModel: ObservableObject {
     
     @Published var user: User?
-    @Published var allRides: [Ride] = []
-    @Published var selectedTab: Tabs = .nearest
     
     private let userDataService = UserDataService()
-    private let rideDataService = RideDataService()
     private var cancellables = Set<AnyCancellable>()
     
     init() {
@@ -26,12 +23,6 @@ final class StationHomeViewModel: ObservableObject {
         userDataService.$user
             .sink { [weak self] returnedUser in
                 self?.user = returnedUser
-            }
-            .store(in: &cancellables)
-        
-        rideDataService.$allRides
-            .sink { [weak self] returnedRides in
-                self?.allRides = returnedRides
             }
             .store(in: &cancellables)
     }

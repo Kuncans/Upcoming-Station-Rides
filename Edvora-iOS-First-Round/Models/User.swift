@@ -14,3 +14,9 @@ struct User: Codable {
     let url: String
     
 }
+
+struct MockUser {
+    
+    static let devUser = User(station_code: 14, name: "Duncs Kents", url: "")
+    
+}

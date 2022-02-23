@@ -9,8 +9,12 @@ import SwiftUI
 
 extension Font {
     
-    static var inter: Font {
-        Font.custom("Inter-Variable", size: 21, relativeTo: .title2)
+    static var interRegular: Font {
+        Font.custom("Inter-Regular", size: 14)
+    }
+    
+    static var interBold: Font {
+        Font.custom("Inter-Bold", size: 14)
     }
     
 }

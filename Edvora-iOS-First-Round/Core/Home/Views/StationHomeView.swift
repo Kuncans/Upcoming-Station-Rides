@@ -14,12 +14,30 @@ struct StationHomeView: View {
     var body: some View {
         
         if let user = vm.user {
-            VStack {
-                Text(user.name)
-                Text(user.url)
-                Text("\(user.station_code)")
+            
+            UserProfileTitleView(user: user)
+                        
+            FilterTabView(selectedTab: $vm.selectedTab)
+            
+            Spacer()
+            
+            switch vm.selectedTab {
+            case .nearest:
+                Text("NEAREST")
+            case .upcoming:
+                Text("UPCOMING")
+            case .past:
+                Text("PAST")
             }
-        } else {
+            Spacer()
+//                ScrollView{
+//                    ForEach(vm.allRides) { ride in
+//                        Text("\(ride.id) + \(ride.state)")
+//                            .frame(maxWidth: .infinity)
+//                    }
+//                }
+            }
+         else {
             ProgressView()
         }
     }
