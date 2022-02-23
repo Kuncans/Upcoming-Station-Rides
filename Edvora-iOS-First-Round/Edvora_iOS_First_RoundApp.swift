@@ -11,7 +11,7 @@ import SwiftUI
 struct Edvora_iOS_First_RoundApp: App {
     var body: some Scene {
         WindowGroup {
-            StationInfoView(ride: MockRide.devRide)
+            StationDetailView(ride: MockRide.devRide)
         }
     }
 }

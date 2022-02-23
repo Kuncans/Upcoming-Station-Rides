@@ -14,6 +14,7 @@ final class StationHomeViewModel: ObservableObject {
     @Published var allRides: [Ride] = []
     @Published var selectedTab: Tabs = .nearest
     @Published var showingFilterModal: Bool = false
+    @Published var selectedRide: Ride? = nil 
     
     private let userDataService = UserDataService()
     private let rideDataService = RideDataService()
@@ -35,5 +36,9 @@ final class StationHomeViewModel: ObservableObject {
                 self?.allRides = returnedRides
             }
             .store(in: &cancellables)
+    }
+    
+    func dismissSelectedRide() {
+        self.selectedRide = nil
     }
 }

@@ -31,7 +31,7 @@ struct FilterTabView: View {
                         .foregroundColor(Color.theme.accent)
                         .frame(width: 14, height: 14)
                     Text("Filters")
-                        .font(.interRegular)
+                        .font(.interMedium)
                         .foregroundColor(.black)
                 }
             }

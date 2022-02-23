@@ -10,6 +10,7 @@ import SwiftUI
 struct StationHomeView: View {
     
     @StateObject private var vm = StationHomeViewModel()
+    @State private var detailViewPresented = false
     
     var body: some View {
         
@@ -20,23 +21,22 @@ struct StationHomeView: View {
                             
                 FilterTabView(selectedTab: $vm.selectedTab, showingFilterModal: $vm.showingFilterModal)
                 
-                if vm.showingFilterModal {
-                    Text("show modal")
-                } else {
-                    Text("close modal")
-                }
+                ridesList
                 
-                Spacer()
-                
-                switch vm.selectedTab {
-                case .nearest:
-                    Text("NEAREST")
-                case .upcoming:
-                    Text("UPCOMING")
-                case .past:
-                    Text("PAST")
+//
+//                switch vm.selectedTab {
+//                case .nearest:
+//                    Text("NEAREST")
+//                case .upcoming:
+//                    Text("UPCOMING")
+//                case .past:
+//                    Text("PAST")
+//                }
+            }
+            .sheet(isPresented: $detailViewPresented, onDismiss: vm.dismissSelectedRide) {
+                if let ride = vm.selectedRide {
+                    StationInfoView(ride: ride)
                 }
-                Spacer()
             }
         }
         else {
@@ -48,5 +48,23 @@ struct StationHomeView: View {
 struct StationHomeView_Previews: PreviewProvider {
     static var previews: some View {
         StationHomeView()
+    }
+}
+
+extension StationHomeView {
+    
+    private var ridesList: some View {
+        ScrollView {
+            ForEach(vm.allRides) { ride in
+                StationInfoView(ride: ride)
+                    .padding(.bottom, 30)
+                    .onTapGesture {
+                        detailViewPresented = true
+                        vm.selectedRide = ride
+                    }
+            }
+            .padding(.horizontal)
+        }
+        .padding(.top, 28)
     }
 }

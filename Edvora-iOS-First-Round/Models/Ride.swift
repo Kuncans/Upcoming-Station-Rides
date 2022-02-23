@@ -16,6 +16,11 @@ struct Ride: Codable, Identifiable {
     let map_url: String
     let state: String
     let city: String
+    var station_path_string: [String] {
+        station_path.map { int in
+            String(int)
+        }
+    }
 //    var formattedDate: Date {
 //        getFormattedDate(date: date)
 //    }

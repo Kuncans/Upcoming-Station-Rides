@@ -30,6 +30,9 @@
 		95C453D527C6672B005441DD /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95C453D427C6672B005441DD /* Inter-Bold.ttf */; };
 		95C453D727C669C6005441DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C453D627C669C6005441DD /* ColorExtension.swift */; };
 		95C453DC27C6725C005441DD /* StationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C453DB27C6725C005441DD /* StationInfoView.swift */; };
+		95C453DE27C67FBB005441DD /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95C453DD27C67FBB005441DD /* Inter-Medium.ttf */; };
+		95C453E127C6831B005441DD /* StationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C453E027C6831B005441DD /* StationDetailView.swift */; };
+		95C453E327C688E8005441DD /* StationDetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C453E227C688E8005441DD /* StationDetailRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		95C453D427C6672B005441DD /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		95C453D627C669C6005441DD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		95C453DB27C6725C005441DD /* StationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfoView.swift; sourceTree = "<group>"; };
+		95C453DD27C67FBB005441DD /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		95C453E027C6831B005441DD /* StationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailView.swift; sourceTree = "<group>"; };
+		95C453E227C688E8005441DD /* StationDetailRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 		95C4539627C51879005441DD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				95C453DD27C67FBB005441DD /* Inter-Medium.ttf */,
 				95C453D227C66725005441DD /* Inter-Regular.ttf */,
 				95C453D427C6672B005441DD /* Inter-Bold.ttf */,
 			);
@@ -194,6 +201,7 @@
 		95C453B627C5840B005441DD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				95C453DF27C6830E005441DD /* StationDetailView */,
 				95C453DA27C67243005441DD /* StationInfoView */,
 				95C453CB27C66051005441DD /* FilterTabGroup */,
 				95C453C127C58C5A005441DD /* UserProfile */,
@@ -244,6 +252,15 @@
 				95C453DB27C6725C005441DD /* StationInfoView.swift */,
 			);
 			path = StationInfoView;
+			sourceTree = "<group>";
+		};
+		95C453DF27C6830E005441DD /* StationDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				95C453E027C6831B005441DD /* StationDetailView.swift */,
+				95C453E227C688E8005441DD /* StationDetailRow.swift */,
+			);
+			path = StationDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +324,7 @@
 				95C4538D27C51788005441DD /* Preview Assets.xcassets in Resources */,
 				95C453D327C66725005441DD /* Inter-Regular.ttf in Resources */,
 				95C453D527C6672B005441DD /* Inter-Bold.ttf in Resources */,
+				95C453DE27C67FBB005441DD /* Inter-Medium.ttf in Resources */,
 				95C4538A27C51788005441DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,10 +342,12 @@
 				95C453D727C669C6005441DD /* ColorExtension.swift in Sources */,
 				95C453C827C65E56005441DD /* UserProfileTitleView.swift in Sources */,
 				95C453B127C580D5005441DD /* UserImageService.swift in Sources */,
+				95C453E327C688E8005441DD /* StationDetailRow.swift in Sources */,
 				95C453CD27C66088005441DD /* FilterTabView.swift in Sources */,
 				95C453BC27C588A9005441DD /* Ride.swift in Sources */,
 				95C453AF27C57BEB005441DD /* UserDataService.swift in Sources */,
 				95C453C427C58C72005441DD /* UserProfileViewModel.swift in Sources */,
+				95C453E127C6831B005441DD /* StationDetailView.swift in Sources */,
 				95C453DC27C6725C005441DD /* StationInfoView.swift in Sources */,
 				95C453BE27C5890F005441DD /* RideDataService.swift in Sources */,
 				95C4539C27C51B14005441DD /* FontExtension.swift in Sources */,

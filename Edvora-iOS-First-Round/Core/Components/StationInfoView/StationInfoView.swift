@@ -43,15 +43,15 @@ struct StationInfoView: View {
                             .foregroundColor(.theme.accent)
                             .frame(width: 18, height: 18)
                         Text("\(ride.id)")
-                            .font(.interRegular)
+                            .font(.interMedium)
                         Spacer()
                         Image("Calendar")
                             .resizable()
                             .renderingMode(.template)
                             .foregroundColor(.theme.accent)
-                            .frame(width: 14, height: 14)
+                            .frame(width: 18, height: 18)
                         Text("16th Feb")
-                            .font(.interRegular)
+                            .font(.interMedium)
                     }
                     .padding(.horizontal)
                 }
