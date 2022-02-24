@@ -11,14 +11,17 @@ struct FilterTabView: View {
     
     @Binding var selectedTab: Tabs
     @Binding var showingFilterModal: Bool
+    @Binding var upcomingCount: Int
+    @Binding var pastCount: Int
     
     var body: some View {
         
         HStack {
-            HStack(spacing: 23) {
+            HStack(spacing: 25) {
                 FilterTabItem(selectedTab: $selectedTab, tabType: .nearest)
-                FilterTabItem(selectedTab: $selectedTab, numberValue: 4, tabType: .upcoming)
-                FilterTabItem(selectedTab: $selectedTab, numberValue: 2, tabType: .past)
+                FilterTabItem(selectedTab: $selectedTab, numberValue: upcomingCount, tabType: .upcoming)
+                FilterTabItem(selectedTab: $selectedTab, numberValue: pastCount, tabType: .past)
+
             }
             Spacer()
             Button {
@@ -42,6 +45,7 @@ struct FilterTabView: View {
 
 struct FilterTabView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterTabView(selectedTab: .constant(.nearest), showingFilterModal: .constant(false))
+        FilterTabView(selectedTab: .constant(.nearest), showingFilterModal: .constant(false), upcomingCount: .constant(0), pastCount: .constant(0))
     }
 }
+

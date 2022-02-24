@@ -16,8 +16,7 @@ struct StationDetailView: View {
             
             RoundedRectangle(cornerRadius: 53)
                 .frame(maxHeight: .infinity, alignment: .top)
-                //.foregroundStyle(.ultraThinMaterial)
-                .foregroundColor(.white.opacity(0.5))
+                .foregroundColor(.white.opacity(0.7))
             
             VStack {
                 RoundedRectangle(cornerRadius: 4)
@@ -43,7 +42,7 @@ struct StationDetailView: View {
                         
                         Divider()
                         
-                        StationDetailRow(lhsLabel: "Date", lhsValue: "16th Feb",
+                        StationDetailRow(lhsLabel: "Date", lhsValue: ride.formattedDate,
                                          rhsLabel: "Distance", rhsValue: "100 Km")
                         
                         Divider()

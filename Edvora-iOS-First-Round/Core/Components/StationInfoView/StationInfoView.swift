@@ -50,7 +50,7 @@ struct StationInfoView: View {
                             .renderingMode(.template)
                             .foregroundColor(.theme.accent)
                             .frame(width: 18, height: 18)
-                        Text("16th Feb")
+                        Text(ride.formattedDate)
                             .font(.interMedium)
                     }
                     .padding(.horizontal)

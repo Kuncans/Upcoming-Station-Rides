@@ -15,19 +15,23 @@ struct StationHomeView: View {
     
     var body: some View {
         
-        if let user = vm.user {
+        if let _ = vm.allRides.last,
+           let user = vm.user
+        {
             
             ZStack {
                 VStack {
                     UserProfileTitleView(user: user)
                                 
-                    FilterTabView(selectedTab: $vm.selectedTab, showingFilterModal: $vm.showingFilterModal)
+                    FilterTabView(selectedTab: $vm.selectedTab,
+                                  showingFilterModal: $vm.showingFilterModal,
+                                  upcomingCount: $vm.upcomingCount,
+                                  pastCount: $vm.pastCount)
                         .disabled(detailViewPresented ? true : false)
                     
                     ridesList
                         .blur(radius: detailViewPresented ? 10 : 0)
                         .animation(.easeInOut(duration: 0.3), value: detailViewPresented)
-
                 }
                 .animation(.spring(), value: viewState)
                 .onTapGesture {
@@ -61,8 +65,8 @@ struct StationHomeView: View {
                                     })
                             )
                     }.edgesIgnoringSafeArea(.all)
-                    
-            }
+                }
+            
         }
         else {
            ProgressView()
@@ -80,7 +84,7 @@ extension StationHomeView {
     
     private var ridesList: some View {
         ScrollView {
-            ForEach(vm.allRides) { ride in
+            ForEach(vm.displayedRides) { ride in
                 StationInfoView(ride: ride)
                     .padding(.bottom, 30)
                     .onTapGesture {
@@ -90,6 +94,7 @@ extension StationHomeView {
                     }
                 
             }
+            .onAppear(perform: vm.updateDisplayedRides)
             .padding(.horizontal)
         }
         .disabled(detailViewPresented ? true : false)

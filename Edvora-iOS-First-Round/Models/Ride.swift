@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Ride: Codable, Identifiable {
-    
+struct Ride: Codable, Identifiable, Hashable {
+
     let id: Int
     let origin_station_code: Int
     let station_path: [Int]
@@ -21,15 +21,56 @@ struct Ride: Codable, Identifiable {
             String(int)
         }
     }
-//    var formattedDate: Date {
-//        getFormattedDate(date: date)
-//    }
-//    
-//    func getFormattedDate(date: String) -> Date {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MM/DD/YYYY HH:MM"
-//    }
+    var unformattedDate: Date {
+        let date = Ride.dateFormatter.date(from: date)!
+        return date
+    }
     
+    var formattedDate: String {
+        let date = Ride.dateFormatter.date(from: date)!
+        let dayString = Ride.dayFormatter.string(from: date)
+        let monthString = Ride.monthFormatter.string(from: date)
+        let day = dayString.suffix(1)
+        let suffixString: String
+        switch day {
+        case "1":
+            suffixString = "st"
+        case "2":
+            suffixString = "nd"
+        case "3":
+            suffixString = "rd"
+        default:
+            suffixString = "th"
+        }
+        return dayString + suffixString + " " + monthString
+    }
+    
+    private static let dayFormatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateFormat = "d"
+        return result
+    }()
+    
+    private static let monthFormatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateFormat = "MMM"
+        return result
+    }()
+    
+    private static let dateFormatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateFormat = "MM/dd/yyyy hh:mm a"
+        return result
+    }()
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func ==(lhs: Ride, rhs: Ride) -> Bool {
+        return lhs.id == rhs.id
+    }
+
 }
 
 struct MockRide {

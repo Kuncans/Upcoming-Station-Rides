@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9594552A27C723EB00856AC0 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594552927C723EB00856AC0 /* ArrayExtension.swift */; };
 		95C4538627C51787005441DD /* Edvora_iOS_First_RoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4538527C51787005441DD /* Edvora_iOS_First_RoundApp.swift */; };
 		95C4538A27C51788005441DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C4538927C51788005441DD /* Assets.xcassets */; };
 		95C4538D27C51788005441DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C4538C27C51788005441DD /* Preview Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9594552927C723EB00856AC0 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		95C4538227C51787005441DD /* Edvora-iOS-First-Round.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Edvora-iOS-First-Round.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C4538527C51787005441DD /* Edvora_iOS_First_RoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edvora_iOS_First_RoundApp.swift; sourceTree = "<group>"; };
 		95C4538927C51788005441DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				95C4539B27C51B14005441DD /* FontExtension.swift */,
 				95C453D627C669C6005441DD /* ColorExtension.swift */,
+				9594552927C723EB00856AC0 /* ArrayExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				95C4538627C51787005441DD /* Edvora_iOS_First_RoundApp.swift in Sources */,
 				95C453C627C58CD0005441DD /* UserImageView.swift in Sources */,
 				95C453BA27C5850C005441DD /* StationHomeViewModel.swift in Sources */,
+				9594552A27C723EB00856AC0 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

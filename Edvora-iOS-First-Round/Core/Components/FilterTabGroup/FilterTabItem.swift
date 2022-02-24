@@ -16,7 +16,7 @@ struct FilterTabItem: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Button {
-                selectedTab = tabType
+                self.selectedTab = tabType
             } label: {
                 if let number = numberValue {
                     Text(tabType.rawValue + " (\(number))")

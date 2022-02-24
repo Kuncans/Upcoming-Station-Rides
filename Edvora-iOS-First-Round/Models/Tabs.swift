@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Tabs: String {
+enum Tabs: String, Equatable {
     
     case nearest = "Nearest"
     case upcoming = "Upcoming"
