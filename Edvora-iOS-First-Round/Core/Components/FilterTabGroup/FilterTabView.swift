@@ -21,7 +21,6 @@ struct FilterTabView: View {
                 FilterTabItem(selectedTab: $selectedTab, tabType: .nearest)
                 FilterTabItem(selectedTab: $selectedTab, numberValue: upcomingCount, tabType: .upcoming)
                 FilterTabItem(selectedTab: $selectedTab, numberValue: pastCount, tabType: .past)
-
             }
             Spacer()
             Button {

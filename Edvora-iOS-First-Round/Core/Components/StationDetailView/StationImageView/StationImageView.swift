@@ -25,7 +25,6 @@ struct StationImageView: View {
             } else {
                 Image("MockImage")
                     .resizable()
-
             }
         }
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StationDetailView: View {
     
-    let ride: Ride
+    @Binding var ride: Ride
     
     var body: some View {
         ZStack {
@@ -80,6 +80,6 @@ struct StationDetailView: View {
 
 struct StationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        StationDetailView(ride: MockRide.devRide)
+        StationDetailView(ride: .constant(MockRide.devRide))
     }
 }

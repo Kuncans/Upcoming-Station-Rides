@@ -18,5 +18,7 @@ struct ColorTheme {
     
     let accent = Color("AccentColor")
     let cardBackground = Color("CardBackground")
+    let filterBackground = Color("FilterBackground")
+    let secondaryFontColor = Color("SecondaryFontColor")
     
 }

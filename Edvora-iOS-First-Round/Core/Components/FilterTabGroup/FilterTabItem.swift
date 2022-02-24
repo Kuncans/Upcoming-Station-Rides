@@ -21,14 +21,17 @@ struct FilterTabItem: View {
                 if let number = numberValue {
                     Text(tabType.rawValue + " (\(number))")
                         .font(selectedTab == tabType ? .interBold : .interRegular)
-                        .foregroundColor(selectedTab == tabType ? .black : .secondary)
+                        .foregroundColor(selectedTab == tabType ? .black : .theme.secondaryFontColor)
                         .font(Font.custom("Inter-Bold", size: 14))
+                        .lineLimit(1)
+
                 }
                 else {
                     Text(tabType.rawValue)
                         .font(selectedTab == tabType ? .interBold : .interRegular)
-                        .foregroundColor(selectedTab == tabType ? .black : .secondary)
+                        .foregroundColor(selectedTab == tabType ? .black : .theme.secondaryFontColor)
                         .font(Font.custom("Inter-Bold", size: 14))
+                        .lineLimit(1)
                 }                  
             }
             if selectedTab == tabType {

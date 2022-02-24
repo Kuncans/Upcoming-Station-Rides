@@ -16,6 +16,9 @@ final class StationHomeViewModel: ObservableObject {
     @Published var displayedRides: [Ride] = []
     @Published var allRides: [Ride] = []
     
+    @Published var cityOptions: [String] = []
+    @Published var stateOptions: [String] = []
+    
     @Published var selectedTab: Tabs = .nearest {
         didSet {
             updateDisplayedRides()
@@ -41,6 +44,8 @@ final class StationHomeViewModel: ObservableObject {
                 self?.allRides = uniqueRides
                 self?.upcomingCount = uniqueRides.filter { $0.unformattedDate > Date() }.count
                 self?.pastCount = uniqueRides.filter { $0.unformattedDate < Date() }.count
+                self?.cityOptions = uniqueRides.map { $0.city }.uniqued()
+                self?.stateOptions = uniqueRides.map { $0.state }.uniqued()
             }
             .store(in: &cancellables)
         
@@ -57,9 +62,13 @@ final class StationHomeViewModel: ObservableObject {
         case .nearest:
             self.displayedRides = allRides
         case .upcoming:
-            self.displayedRides = allRides.filter { $0.unformattedDate > Date() }
+            self.displayedRides = allRides.filter { $0.unformattedDate > Date() }.sorted(by: { lhs, rhs in
+                lhs.unformattedDate < rhs.unformattedDate
+            })
         case .past:
-            self.displayedRides = allRides.filter { $0.unformattedDate < Date() }
+            self.displayedRides = allRides.filter { $0.unformattedDate < Date() }.sorted(by: { lhs, rhs in
+                lhs.unformattedDate > rhs.unformattedDate
+            })
         }
     }
     

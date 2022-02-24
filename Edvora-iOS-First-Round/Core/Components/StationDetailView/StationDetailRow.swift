@@ -40,9 +40,3 @@ struct StationDetailRow: View {
         }
     }
 }
-
-//struct StationDetailRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        StationDetailRow()
-//    }
-//}

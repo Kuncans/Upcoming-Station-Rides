@@ -42,7 +42,7 @@ struct StationHomeView: View {
                     VStack {
                         Spacer()
                         
-                        StationDetailView(ride: vm.selectedRide )
+                        StationDetailView(ride: $vm.selectedRide )
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .offset(y: viewState.height + 200)
                             .animation(.easeInOut, value: viewState)
@@ -66,6 +66,12 @@ struct StationHomeView: View {
                             )
                     }.edgesIgnoringSafeArea(.all)
                 }
+            .overlay {
+                FilterOptionsView()
+                    .offset(x: 65, y: -160)
+                    .opacity(vm.showingFilterModal ? 1.0 : 0.0)
+                    .animation(.easeInOut, value: vm.showingFilterModal)
+            }
             
         }
         else {
@@ -91,6 +97,7 @@ extension StationHomeView {
                         vm.updateSelectedRide(ride: ride)
                         self.viewState = .zero
                         detailViewPresented = true
+                        vm.showingFilterModal = false
                     }
                 
             }
