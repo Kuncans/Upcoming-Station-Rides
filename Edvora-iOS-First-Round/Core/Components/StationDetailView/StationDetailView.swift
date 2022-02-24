@@ -25,8 +25,7 @@ struct StationDetailView: View {
                     .padding(.bottom, 20)
                     .padding(.top, 16)
                 
-                Image("MockImage")
-                    .resizable()
+                StationImageView(ride: ride)
                     .clipShape(RoundedRectangle(cornerRadius: 17))
                     .frame(width: 332, height: 224)
                     .padding(.bottom, 22)

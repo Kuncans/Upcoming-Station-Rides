@@ -42,7 +42,7 @@ struct StationHomeView: View {
                     VStack {
                         Spacer()
                         
-                        StationDetailView(ride: vm.selectedRide ?? MockRide.devRide)
+                        StationDetailView(ride: vm.selectedRide )
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .offset(y: viewState.height + 200)
                             .animation(.easeInOut, value: viewState)
@@ -88,9 +88,9 @@ extension StationHomeView {
                 StationInfoView(ride: ride)
                     .padding(.bottom, 30)
                     .onTapGesture {
-                        detailViewPresented = true
-                        vm.selectedRide = ride
+                        vm.updateSelectedRide(ride: ride)
                         self.viewState = .zero
+                        detailViewPresented = true
                     }
                 
             }

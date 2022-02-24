@@ -12,7 +12,7 @@ final class StationHomeViewModel: ObservableObject {
       
     @Published var user: User?
     
-    @Published var selectedRide: Ride? = nil
+    @Published var selectedRide: Ride = MockRide.devRide
     @Published var displayedRides: [Ride] = []
     @Published var allRides: [Ride] = []
     
@@ -63,9 +63,8 @@ final class StationHomeViewModel: ObservableObject {
         }
     }
     
-    func dismissSelectedRide() {
-        self.selectedRide = nil
+    func updateSelectedRide(ride: Ride) {
+        self.selectedRide = ride
     }
-
 }
 

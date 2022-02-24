@@ -17,8 +17,7 @@ struct StationInfoView: View {
                 .foregroundColor(Color.theme.cardBackground)
             
             VStack {
-                Image("MockImage")
-                    .resizable()
+                StationImageView(ride: ride)
                     .frame(width: 349, height: 173)
                     .overlay(
                         ZStack {

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9594552A27C723EB00856AC0 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594552927C723EB00856AC0 /* ArrayExtension.swift */; };
+		9594552C27C728EF00856AC0 /* StationImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594552B27C728EF00856AC0 /* StationImageViewModel.swift */; };
+		9594552E27C7292C00856AC0 /* StationImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594552D27C7292C00856AC0 /* StationImageService.swift */; };
+		9594553027C729E200856AC0 /* StationImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594552F27C729E200856AC0 /* StationImageView.swift */; };
 		95C4538627C51787005441DD /* Edvora_iOS_First_RoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4538527C51787005441DD /* Edvora_iOS_First_RoundApp.swift */; };
 		95C4538A27C51788005441DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C4538927C51788005441DD /* Assets.xcassets */; };
 		95C4538D27C51788005441DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C4538C27C51788005441DD /* Preview Assets.xcassets */; };
@@ -38,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		9594552927C723EB00856AC0 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		9594552B27C728EF00856AC0 /* StationImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationImageViewModel.swift; sourceTree = "<group>"; };
+		9594552D27C7292C00856AC0 /* StationImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationImageService.swift; sourceTree = "<group>"; };
+		9594552F27C729E200856AC0 /* StationImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationImageView.swift; sourceTree = "<group>"; };
 		95C4538227C51787005441DD /* Edvora-iOS-First-Round.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Edvora-iOS-First-Round.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C4538527C51787005441DD /* Edvora_iOS_First_RoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edvora_iOS_First_RoundApp.swift; sourceTree = "<group>"; };
 		95C4538927C51788005441DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9594553127C729E500856AC0 /* StationImageView */ = {
+			isa = PBXGroup;
+			children = (
+				9594552F27C729E200856AC0 /* StationImageView.swift */,
+				9594552B27C728EF00856AC0 /* StationImageViewModel.swift */,
+			);
+			path = StationImageView;
+			sourceTree = "<group>";
+		};
 		95C4537927C51787005441DD = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +195,7 @@
 				95C453AE27C57BEB005441DD /* UserDataService.swift */,
 				95C453B027C580D4005441DD /* UserImageService.swift */,
 				95C453BD27C5890F005441DD /* RideDataService.swift */,
+				9594552D27C7292C00856AC0 /* StationImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -260,6 +276,7 @@
 		95C453DF27C6830E005441DD /* StationDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				9594553127C729E500856AC0 /* StationImageView */,
 				95C453E027C6831B005441DD /* StationDetailView.swift */,
 				95C453E227C688E8005441DD /* StationDetailRow.swift */,
 			);
@@ -347,15 +364,18 @@
 				95C453B127C580D5005441DD /* UserImageService.swift in Sources */,
 				95C453E327C688E8005441DD /* StationDetailRow.swift in Sources */,
 				95C453CD27C66088005441DD /* FilterTabView.swift in Sources */,
+				9594552C27C728EF00856AC0 /* StationImageViewModel.swift in Sources */,
 				95C453BC27C588A9005441DD /* Ride.swift in Sources */,
 				95C453AF27C57BEB005441DD /* UserDataService.swift in Sources */,
 				95C453C427C58C72005441DD /* UserProfileViewModel.swift in Sources */,
 				95C453E127C6831B005441DD /* StationDetailView.swift in Sources */,
+				9594553027C729E200856AC0 /* StationImageView.swift in Sources */,
 				95C453DC27C6725C005441DD /* StationInfoView.swift in Sources */,
 				95C453BE27C5890F005441DD /* RideDataService.swift in Sources */,
 				95C4539C27C51B14005441DD /* FontExtension.swift in Sources */,
 				95C453CF27C660AC005441DD /* FilterTabItem.swift in Sources */,
 				95C453A327C51DC9005441DD /* StationHomeView.swift in Sources */,
+				9594552E27C7292C00856AC0 /* StationImageService.swift in Sources */,
 				95C453B527C58303005441DD /* UserImageViewModel.swift in Sources */,
 				95C4538627C51787005441DD /* Edvora_iOS_First_RoundApp.swift in Sources */,
 				95C453C627C58CD0005441DD /* UserImageView.swift in Sources */,
