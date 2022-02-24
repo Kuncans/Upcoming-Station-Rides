@@ -45,6 +45,18 @@ struct Ride: Codable, Identifiable, Hashable {
         return dayString + suffixString + " " + monthString
     }
     
+    var distanceToUser: Int?
+    
+    func calculateDistanceTo(stationCode: Int) -> Int {
+        var result = Int.max
+        
+        for pathStationCode in station_path {
+            result = min(result, abs(pathStationCode - stationCode))
+        }
+        
+        return result
+    }
+    
     private static let dayFormatter: DateFormatter = {
         let result = DateFormatter()
         result.dateFormat = "d"

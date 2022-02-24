@@ -67,7 +67,11 @@ struct StationHomeView: View {
                     }.edgesIgnoringSafeArea(.all)
                 }
             .overlay {
-                FilterOptionsView()
+                FilterOptionsView(
+                    filterCityOptions: $vm.cityOptions,
+                    filterStateOptions: $vm.stateOptions,
+                    selectedCityFilter: $vm.cityFilter,
+                    selectedStateFilter: $vm.stateFilter)
                     .offset(x: 65, y: -160)
                     .opacity(vm.showingFilterModal ? 1.0 : 0.0)
                     .animation(.easeInOut, value: vm.showingFilterModal)

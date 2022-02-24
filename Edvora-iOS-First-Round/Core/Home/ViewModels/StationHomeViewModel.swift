@@ -26,6 +26,9 @@ final class StationHomeViewModel: ObservableObject {
     }
     
     @Published var showingFilterModal: Bool = false
+    @Published var cityFilter: String? = nil
+    @Published var stateFilter: String? = nil
+    
     @Published var upcomingCount: Int = 0
     @Published var pastCount: Int = 0
         
@@ -57,6 +60,7 @@ final class StationHomeViewModel: ObservableObject {
     }
     
     func updateDisplayedRides() {
+        
         switch self.selectedTab {
             
         case .nearest:
@@ -75,5 +79,7 @@ final class StationHomeViewModel: ObservableObject {
     func updateSelectedRide(ride: Ride) {
         self.selectedRide = ride
     }
+    
+
 }
 
