@@ -171,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				95C453A227C51DC9005441DD /* StationHomeView.swift */,
+				9594553227C7C1AF00856AC0 /* FilterOptionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,7 +266,6 @@
 			children = (
 				95C453CC27C66088005441DD /* FilterTabView.swift */,
 				95C453CE27C660AC005441DD /* FilterTabItem.swift */,
-				9594553227C7C1AF00856AC0 /* FilterOptionsView.swift */,
 				9563E67327C7FBD1006FCC2E /* FilterDropdownItem.swift */,
 			);
 			path = FilterTabGroup;

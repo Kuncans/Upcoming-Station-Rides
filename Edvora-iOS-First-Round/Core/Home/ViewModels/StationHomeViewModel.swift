@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class StationHomeViewModel: ObservableObject {
-      
+    
     @Published var user: User?
     
     @Published var selectedRide: Ride = MockRide.devRide
@@ -39,7 +39,7 @@ final class StationHomeViewModel: ObservableObject {
     
     @Published var upcomingCount: Int = 0
     @Published var pastCount: Int = 0
-        
+    
     private let userDataService = UserDataService()
     private let rideDataService = RideDataService()
     private var cancellables = Set<AnyCancellable>()
@@ -69,37 +69,35 @@ final class StationHomeViewModel: ObservableObject {
     
     func updateDisplayedRides() {
         
+        self.displayedRides = allRides
+        
         switch self.selectedTab {
             
         case .nearest:
-            self.displayedRides = allRides
-            if let filter = cityFilter {
-                self.displayedRides = filterByCity(arrToFilter: displayedRides, city: filter)
-            }
-            if let filter = stateFilter {
-                self.displayedRides = filterByState(arrToFilter: displayedRides, state: filter)
-            }
+            break
         case .upcoming:
             self.displayedRides = allRides.filter { $0.unformattedDate > Date() }.sorted(by: { lhs, rhs in
                 lhs.unformattedDate < rhs.unformattedDate
             })
-            if let filter = cityFilter {
-                self.displayedRides = filterByCity(arrToFilter: displayedRides, city: filter)
-            }
-            if let filter = stateFilter {
-                self.displayedRides = filterByState(arrToFilter: displayedRides, state: filter)
-            }
         case .past:
             self.displayedRides = allRides.filter { $0.unformattedDate < Date() }.sorted(by: { lhs, rhs in
                 lhs.unformattedDate > rhs.unformattedDate
             })
-            if let filter = cityFilter {
-                self.displayedRides = filterByCity(arrToFilter: displayedRides, city: filter)
-            }
-            if let filter = stateFilter {
-                self.displayedRides = filterByState(arrToFilter: displayedRides, state: filter)
-            }
         }
+        
+        self.displayedRides = applyGeographicFilters(arrToFilter: displayedRides)
+    }
+    
+    func applyGeographicFilters(arrToFilter: [Ride]) -> [Ride] {
+        var result: [Ride] = arrToFilter
+        
+        if let filter = cityFilter {
+            result = filterByCity(arrToFilter: arrToFilter, city: filter)
+        }
+        if let filter = stateFilter {
+            result = filterByState(arrToFilter: result, state: filter)
+        }
+        return result
     }
     
     func updateSelectedRide(ride: Ride) {
@@ -116,6 +114,6 @@ final class StationHomeViewModel: ObservableObject {
         return filteredRides
     }
     
-
+    
 }
 

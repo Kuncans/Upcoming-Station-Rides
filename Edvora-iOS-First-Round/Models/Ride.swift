@@ -45,8 +45,6 @@ struct Ride: Codable, Identifiable, Hashable {
         return dayString + suffixString + " " + monthString
     }
     
-    var distanceToUser: Int?
-    
     func calculateDistanceTo(stationCode: Int) -> Int {
         var result = Int.max
         
