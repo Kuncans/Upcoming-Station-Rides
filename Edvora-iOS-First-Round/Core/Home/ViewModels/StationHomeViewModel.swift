@@ -26,8 +26,16 @@ final class StationHomeViewModel: ObservableObject {
     }
     
     @Published var showingFilterModal: Bool = false
-    @Published var cityFilter: String? = nil
-    @Published var stateFilter: String? = nil
+    @Published var cityFilter: String? = nil {
+        didSet {
+            updateDisplayedRides()
+        }
+    }
+    @Published var stateFilter: String? = nil {
+        didSet {
+            updateDisplayedRides()
+        }
+    }
     
     @Published var upcomingCount: Int = 0
     @Published var pastCount: Int = 0
@@ -65,19 +73,47 @@ final class StationHomeViewModel: ObservableObject {
             
         case .nearest:
             self.displayedRides = allRides
+            if let filter = cityFilter {
+                self.displayedRides = filterByCity(arrToFilter: displayedRides, city: filter)
+            }
+            if let filter = stateFilter {
+                self.displayedRides = filterByState(arrToFilter: displayedRides, state: filter)
+            }
         case .upcoming:
             self.displayedRides = allRides.filter { $0.unformattedDate > Date() }.sorted(by: { lhs, rhs in
                 lhs.unformattedDate < rhs.unformattedDate
             })
+            if let filter = cityFilter {
+                self.displayedRides = filterByCity(arrToFilter: displayedRides, city: filter)
+            }
+            if let filter = stateFilter {
+                self.displayedRides = filterByState(arrToFilter: displayedRides, state: filter)
+            }
         case .past:
             self.displayedRides = allRides.filter { $0.unformattedDate < Date() }.sorted(by: { lhs, rhs in
                 lhs.unformattedDate > rhs.unformattedDate
             })
+            if let filter = cityFilter {
+                self.displayedRides = filterByCity(arrToFilter: displayedRides, city: filter)
+            }
+            if let filter = stateFilter {
+                self.displayedRides = filterByState(arrToFilter: displayedRides, state: filter)
+            }
         }
     }
     
     func updateSelectedRide(ride: Ride) {
         self.selectedRide = ride
+    }
+    
+    func filterByCity(arrToFilter: [Ride], city: String) -> [Ride] {
+        let filteredRides = arrToFilter.filter({$0.city == city})
+        return filteredRides
+    }
+    
+    func filterByState(arrToFilter: [Ride], state: String) -> [Ride] {
+        let filteredRides = arrToFilter.filter({$0.state == state})
+        return filteredRides
     }
     
 

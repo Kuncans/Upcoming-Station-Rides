@@ -26,10 +26,26 @@ struct FilterOptionsView: View {
             
             VStack {
                 
-                Text("Filters")
-                    .font(.callout)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                HStack {
+                    Text("Filters")
+                        .font(.callout)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     .padding([.top, .leading])
+                    
+                    Spacer()
+                    
+                    if selectedStateFilter != nil || selectedCityFilter != nil {
+                        Image(systemName: "xmark")
+                            .font(.interBold)
+                            .padding(.trailing)
+                            .padding(.top)
+                            .onTapGesture {
+                                selectedCityFilter = nil
+                                selectedStateFilter = nil
+                            }
+                    }
+                    
+                }
                 
                 Spacer()
                 
