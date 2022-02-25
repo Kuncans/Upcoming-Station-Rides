@@ -1,6 +1,6 @@
-# Upcoming-Station-Rides
+# Upcoming Station Rides
 
-For this project, I was given a mock brief to complete within a 72hr timeframe. 
+For this project, I was given a mock brief to complete within a 72 hour timeframe. 
 
 The provided Figma UI needed to be implemented using Swift UI, with the mentioned functionalities.
 
