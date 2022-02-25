@@ -15,7 +15,7 @@ struct StationHomeView: View {
     
     var body: some View {
         
-        if let _ = vm.allRides.last,
+        if let _ = vm.allDisplayRides.last,
            let user = vm.user
         {
             
@@ -68,7 +68,7 @@ struct StationHomeView: View {
                 }
             .overlay {
                 FilterOptionsView(
-                    filterCityOptions: $vm.cityOptions,
+                    filterCityOptions: $vm.displayCityOptions,
                     filterStateOptions: $vm.stateOptions,
                     selectedCityFilter: $vm.cityFilter,
                     selectedStateFilter: $vm.stateFilter)

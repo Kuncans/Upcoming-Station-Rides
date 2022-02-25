@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9563E67427C7FBD1006FCC2E /* FilterDropdownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563E67327C7FBD1006FCC2E /* FilterDropdownItem.swift */; };
+		9563E67627C8257E006FCC2E /* DisplayRide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563E67527C8257E006FCC2E /* DisplayRide.swift */; };
 		9594552A27C723EB00856AC0 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594552927C723EB00856AC0 /* ArrayExtension.swift */; };
 		9594552C27C728EF00856AC0 /* StationImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594552B27C728EF00856AC0 /* StationImageViewModel.swift */; };
 		9594552E27C7292C00856AC0 /* StationImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594552D27C7292C00856AC0 /* StationImageService.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		9563E67327C7FBD1006FCC2E /* FilterDropdownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDropdownItem.swift; sourceTree = "<group>"; };
+		9563E67527C8257E006FCC2E /* DisplayRide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRide.swift; sourceTree = "<group>"; };
 		9594552927C723EB00856AC0 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		9594552B27C728EF00856AC0 /* StationImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationImageViewModel.swift; sourceTree = "<group>"; };
 		9594552D27C7292C00856AC0 /* StationImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationImageService.swift; sourceTree = "<group>"; };
@@ -171,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				95C453A227C51DC9005441DD /* StationHomeView.swift */,
-				9594553227C7C1AF00856AC0 /* FilterOptionsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +190,7 @@
 			children = (
 				95C453A427C51DE4005441DD /* User.swift */,
 				95C453BB27C588A9005441DD /* Ride.swift */,
+				9563E67527C8257E006FCC2E /* DisplayRide.swift */,
 				95C453D027C6610A005441DD /* Tabs.swift */,
 			);
 			path = Models;
@@ -209,7 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				95C453B627C5840B005441DD /* Components */,
-				95C453B827C58426005441DD /* Home */,
+				95C453B827C58426005441DD /* HomeScreen */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -242,13 +244,13 @@
 			path = UserImage;
 			sourceTree = "<group>";
 		};
-		95C453B827C58426005441DD /* Home */ = {
+		95C453B827C58426005441DD /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
 				95C4539E27C51D66005441DD /* ViewModels */,
 				95C4539D27C51D5F005441DD /* Views */,
 			);
-			path = Home;
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		95C453C127C58C5A005441DD /* UserProfile */ = {
@@ -267,6 +269,7 @@
 				95C453CC27C66088005441DD /* FilterTabView.swift */,
 				95C453CE27C660AC005441DD /* FilterTabItem.swift */,
 				9563E67327C7FBD1006FCC2E /* FilterDropdownItem.swift */,
+				9594553227C7C1AF00856AC0 /* FilterOptionsView.swift */,
 			);
 			path = FilterTabGroup;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				95C4538627C51787005441DD /* Edvora_iOS_First_RoundApp.swift in Sources */,
 				95C453C627C58CD0005441DD /* UserImageView.swift in Sources */,
 				95C453BA27C5850C005441DD /* StationHomeViewModel.swift in Sources */,
+				9563E67627C8257E006FCC2E /* DisplayRide.swift in Sources */,
 				9594552A27C723EB00856AC0 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

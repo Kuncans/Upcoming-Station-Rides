@@ -10,7 +10,7 @@ import Combine
 
 final class RideDataService {
 
-    @Published var allRides: [Ride] = []
+    @Published var rawRides: [Ride] = []
 
     private var rideSubscription: AnyCancellable?
 
@@ -26,7 +26,7 @@ final class RideDataService {
         rideSubscription = NetworkManager.download(url: url)
             .decode(type: [Ride].self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkManager.handleCompletion, receiveValue: { [weak self] (returnedRides) in
-                self?.allRides = returnedRides
+                self?.rawRides = returnedRides
                 self?.rideSubscription?.cancel()
             })
     }

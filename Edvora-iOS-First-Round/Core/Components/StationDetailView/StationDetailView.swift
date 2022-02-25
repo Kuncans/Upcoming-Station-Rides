@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StationDetailView: View {
     
-    @Binding var ride: Ride
+    @Binding var ride: DisplayRide
     
     var body: some View {
         ZStack {
@@ -42,7 +42,7 @@ struct StationDetailView: View {
                         Divider()
                         
                         StationDetailRow(lhsLabel: "Date", lhsValue: ride.formattedDate,
-                                         rhsLabel: "Distance", rhsValue: "100 Km")
+                                         rhsLabel: "Distance", rhsValue: "\(ride.distanceFromUser) Km")
                         
                         Divider()
                         
@@ -80,6 +80,6 @@ struct StationDetailView: View {
 
 struct StationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        StationDetailView(ride: .constant(MockRide.devRide))
+        StationDetailView(ride: .constant(MockDisplayRide.devRide))
     }
 }

@@ -11,7 +11,7 @@ struct StationImageView: View {
     
     @StateObject var vm: StationImageViewModel
     
-    init(ride: Ride) {
+    init(ride: DisplayRide) {
         _vm = StateObject(wrappedValue: StationImageViewModel(ride: ride))
     }
     
@@ -32,6 +32,6 @@ struct StationImageView: View {
 
 struct StationImageView_Previews: PreviewProvider {
     static var previews: some View {
-        StationImageView(ride: MockRide.devRide)
+        StationImageView(ride: MockDisplayRide.devRide)
     }
 }

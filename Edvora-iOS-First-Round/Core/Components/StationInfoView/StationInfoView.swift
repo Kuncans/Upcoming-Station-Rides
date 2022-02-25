@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StationInfoView: View {
     
-    let ride: Ride
+    let ride: DisplayRide
     
     var body: some View {
         ZStack {
@@ -25,7 +25,7 @@ struct StationInfoView: View {
                             .frame(width: 80.13, height: 26)
                             .foregroundColor(.theme.accent)
                             
-                            Text("100 Km")
+                            Text("\(ride.distanceFromUser) Km")
                                 .foregroundColor(.white)
                                 .font(.interBold)
                         }
@@ -68,6 +68,6 @@ struct StationInfoView: View {
 
 struct StationInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        StationInfoView(ride: MockRide.devRide)
+        StationInfoView(ride: MockDisplayRide.devRide)
     }
 }

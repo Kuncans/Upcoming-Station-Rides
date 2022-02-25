@@ -14,11 +14,11 @@ final class StationImageViewModel: ObservableObject {
     @Published var stationImage: UIImage? = nil
     @Published var isLoading: Bool = false
     
-    private let ride: Ride
+    private let ride: DisplayRide
     private let dataService: StationImageService
     private var cancellables = Set<AnyCancellable>()
     
-    init(ride: Ride) {
+    init(ride: DisplayRide) {
         self.ride = ride
         self.dataService = StationImageService(ride: ride)
         self.addSubscribers()

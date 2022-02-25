@@ -14,9 +14,9 @@ final class StationImageService {
     @Published var stationImage: UIImage? = nil
 
     private var stationImageSubscription: AnyCancellable?
-    private let ride: Ride
+    private let ride: DisplayRide
 
-    init(ride: Ride) {
+    init(ride: DisplayRide) {
         self.ride = ride
         getStationImage()
     }
