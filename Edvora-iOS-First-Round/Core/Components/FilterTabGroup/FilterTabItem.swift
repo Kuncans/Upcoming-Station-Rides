@@ -10,7 +10,7 @@ import SwiftUI
 struct FilterTabItem: View {
     
     @Binding var selectedTab: Tabs
-    @State var numberValue: Int?
+    var numberValue: Binding<Int>?
     let tabType: Tabs
     
     var body: some View {
@@ -18,7 +18,7 @@ struct FilterTabItem: View {
             Button {
                 self.selectedTab = tabType
             } label: {
-                if let number = numberValue {
+                if let number = numberValue?.wrappedValue {
                     Text(tabType.rawValue + " (\(number))")
                         .font(selectedTab == tabType ? .interBold : .interRegular)
                         .foregroundColor(selectedTab == tabType ? .black : .theme.secondaryFontColor)
@@ -45,6 +45,6 @@ struct FilterTabItem: View {
 
 struct FilterTabItem_Previews: PreviewProvider {
     static var previews: some View {
-        FilterTabItem(selectedTab: .constant(.nearest), tabType: .nearest)
+        FilterTabItem(selectedTab: .constant(.nearest), numberValue: .constant(0), tabType: .nearest)
     }
 }

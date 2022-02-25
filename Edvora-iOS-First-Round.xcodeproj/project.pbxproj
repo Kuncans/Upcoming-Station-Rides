@@ -91,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9563E67727C86931006FCC2E /* FilterModal */ = {
+			isa = PBXGroup;
+			children = (
+				9594553227C7C1AF00856AC0 /* FilterOptionsView.swift */,
+				9563E67327C7FBD1006FCC2E /* FilterDropdownItem.swift */,
+			);
+			path = FilterModal;
+			sourceTree = "<group>";
+		};
 		9594553127C729E500856AC0 /* StationImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,10 +275,9 @@
 		95C453CB27C66051005441DD /* FilterTabGroup */ = {
 			isa = PBXGroup;
 			children = (
+				9563E67727C86931006FCC2E /* FilterModal */,
 				95C453CC27C66088005441DD /* FilterTabView.swift */,
 				95C453CE27C660AC005441DD /* FilterTabItem.swift */,
-				9563E67327C7FBD1006FCC2E /* FilterDropdownItem.swift */,
-				9594553227C7C1AF00856AC0 /* FilterOptionsView.swift */,
 			);
 			path = FilterTabGroup;
 			sourceTree = "<group>";

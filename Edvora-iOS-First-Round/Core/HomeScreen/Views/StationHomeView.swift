@@ -37,6 +37,7 @@ struct StationHomeView: View {
                 .onTapGesture {
                     self.viewState = CGSize(width: 0, height: 800)
                     detailViewPresented = false
+                    vm.showingFilterModal = false
                 }
                 
                     VStack {
@@ -49,6 +50,7 @@ struct StationHomeView: View {
                             .onTapGesture {
                                 self.viewState = CGSize(width: 0, height: 800)
                                 detailViewPresented = false
+                                vm.showingFilterModal = false
                             }
                             .gesture(
                                 DragGesture()
@@ -71,12 +73,14 @@ struct StationHomeView: View {
                     filterCityOptions: $vm.displayCityOptions,
                     filterStateOptions: $vm.stateOptions,
                     selectedCityFilter: $vm.cityFilter,
-                    selectedStateFilter: $vm.stateFilter)
+                    selectedStateFilter: $vm.stateFilter,
+                    modalDisplayed: $vm.showingFilterModal,
+                    resetValues: $vm.resetFilterValues)
                     .offset(x: 65, y: -160)
                     .opacity(vm.showingFilterModal ? 1.0 : 0.0)
                     .animation(.easeInOut, value: vm.showingFilterModal)
+ 
             }
-            
         }
         else {
            ProgressView()

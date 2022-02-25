@@ -18,9 +18,9 @@ struct FilterTabView: View {
         
         HStack {
             HStack(spacing: 25) {
-                FilterTabItem(selectedTab: $selectedTab, tabType: .nearest)
-                FilterTabItem(selectedTab: $selectedTab, numberValue: upcomingCount, tabType: .upcoming)
-                FilterTabItem(selectedTab: $selectedTab, numberValue: pastCount, tabType: .past)
+                FilterTabItem(selectedTab: $selectedTab, numberValue: nil, tabType: .nearest)
+                FilterTabItem(selectedTab: $selectedTab, numberValue: $upcomingCount, tabType: .upcoming)
+                FilterTabItem(selectedTab: $selectedTab, numberValue: $pastCount, tabType: .past)
             }
             Spacer()
             Button {

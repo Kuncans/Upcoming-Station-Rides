@@ -14,6 +14,10 @@ struct FilterOptionsView: View {
     @Binding var selectedCityFilter: String?
     @Binding var selectedStateFilter: String?
     
+    @Binding var modalDisplayed: Bool
+    
+    @Binding var resetValues: Bool
+    
     @State var showCityDropdown = false
     @State var showStateDropdown = false
     
@@ -35,16 +39,18 @@ struct FilterOptionsView: View {
                     Spacer()
                     
                     if selectedStateFilter != nil || selectedCityFilter != nil {
-                        Image(systemName: "xmark")
-                            .font(.interBold)
-                            .padding(.trailing)
-                            .padding(.top)
-                            .onTapGesture {
-                                selectedCityFilter = nil
-                                selectedStateFilter = nil
-                            }
+                        
+                        Button {
+                            resetValues = true
+                        } label: {
+                            Text("Clear")
+                                .font(.interRegular)
+                                .foregroundColor(.theme.accent)
+                                .animation(.easeInOut, value: modalDisplayed)
+                                .padding(.trailing)
+                                .padding(.top)
+                        }
                     }
-                    
                 }
                 
                 Spacer()
@@ -136,7 +142,7 @@ struct FilterOptionsView: View {
 
 struct FilterOptionsView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterOptionsView(filterCityOptions: .constant([]), filterStateOptions: .constant([]), selectedCityFilter: .constant(nil), selectedStateFilter: .constant(nil))
+        FilterOptionsView(filterCityOptions: .constant([]), filterStateOptions: .constant([]), selectedCityFilter: .constant(nil), selectedStateFilter: .constant(nil), modalDisplayed: .constant(true), resetValues: .constant(false))
         //.previewLayout(.sizeThatFits)
             .padding()
     }
